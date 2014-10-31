@@ -21,7 +21,7 @@ Erstelle eine Arbeitskopie, indem du folgenden Befehl ausführst: `git clone /pf
 
 Dein lokales Repository besteht aus drei "Instanzen", die von git verwaltet werden. Die erste ist deine `Arbeitskopie`, welche die echten Dateien enthält. Die zweite ist der `Index`, welcher als Zwischenstufe agiert und zu guter Letzt noch der `HEAD`, der auf deinen letzten Commit zeigt.
 
-![Workflow](workflow.png)
+![Workflow](workflow.PNG)
 
 ###Add und Commit
 
@@ -44,7 +44,7 @@ hinzufügen.
 
 Branches werden benutzt, um verschiedene Funktionen isoliert voneinander zu entwickeln. Der master-Branch ist der "Standard"-Branch, wenn du ein neues Repository erstellst. Du solltest aber für die Entwicklung andere Branches verwenden und diese dann in den Master-Branch zusammenführen (mergen).
 
-![Branching](branching.png)
+![Branching](branching.PNG)
 
 Erstelle einen neuen Branch mit dem Namen "feature_x" und wechsle zu diesem:
 `git checkout -b feature_x`
