@@ -47,14 +47,51 @@ Branches werden benutzt, um verschiedene Funktionen isoliert voneinander zu entw
 ![Branching](branching.PNG)
 
 Erstelle einen neuen Branch mit dem Namen "feature_x" und wechsle zu diesem:
-`git checkout -b feature_x`
+`git checkout -b feature_x`.
+
 Um zum Master zurück zu wechseln:
-`git checkout master`
+`git checkout master`.
+
 Und um den eben erstellten Branch wieder zu löschen:
-`git branch -d feature_x`
+`git branch -d feature_x`.
+
 Ein Branch ist nicht für andere verfügbar, bis du diesen in dein entferntes Repository hochlädst:
-`git push origin <branch>`
+`git push origin <branch>`.
 
+###Upadate und Merge
 
+Um dein lokales Repository mit den neuesten Änderungen zu aktualisieren, verwende:
+`git pull`.
+in deiner Arbeitskopie, um die Änderungen erst herunterzuladen (fetch) und dann mit deinem Stand zusammenzuführen (merge).
+Wenn du einen anderen Branch mit deinem aktuellen (z.B. master) zusammenführen willst, benutze:
+`git merge <branch>`.
+In beiden Fällen versucht git die Änderungen automatisch zusammenzuführen. Unglücklicherweise ist dies nicht immer möglich und endet in Konflikten. Du bist verantwortlich, diese Konflikte durch manuelles Editieren der betroffenen Dateien zu lösen. Bist du damit fertig, musst du das git mit folgendem Befehl mitteilen:
+`git add <dateiname>`.
+Bevor du Änderungen zusammenführst, kannst du dir die Differenzen auch anschauen:
+`git diff <quell_branch> <ziel_branch>`.
 
-:smile: :thumbsup:
+###Änderungen rückgängig machen
+
+Falls du mal etwas falsch machst, kannst du die lokalen Änderungen mit:
+`git checkout -- <filename>`.
+auf den letzten Stand im HEAD zurücksetzen. Änderungen, die du bereits zum Index hinzugefügt hast, bleiben bestehen.
+
+Wenn du aber deine lokalen Änderungen komplett entfernen möchtest, holst du dir den letzten Stand vom entfernten Repository mit folgenden Befehlen:
+`git fetch origin`
+`git reset --hard origin/master`
+
+###Tipps und Tricks :smile::thumbsup:
+
+Eingebaute git-GUI:
+`gitk`.
+Farbige Konsolenausgabe:
+`git config color.ui true`.
+Eine Zeile pro Commit in der Logausgabe:
+`git config format.pretty oneline`.
+Interaktives Hinzufügen von Änderungen:
+`git add -i`.
+<br>
+<br>
+<br>
+Michael Haenzi, Switzerland
+######Hier zur [Quelle](http://rogerdudler.github.io/git-guide/index.html)
